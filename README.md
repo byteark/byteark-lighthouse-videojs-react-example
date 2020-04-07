@@ -17,7 +17,7 @@ This project is an example usage for ByteArk Lighthouse Plugin for Video.js with
 videojs.use('*', window.ByteArkLighthouse.middleware)
 ```
 
-3, Creating the VideoJS player just like how you normally do it, except that you need to fill some video detail fields in the source object.
+3. Creating the VideoJS player just like how you normally do it, except that you need to fill some video detail fields in the source object.
 ```js
 // 'player-id-here' is the ID of <video> or <div> element of the player.
 
