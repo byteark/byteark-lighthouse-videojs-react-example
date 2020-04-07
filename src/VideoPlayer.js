@@ -3,13 +3,13 @@ import videojs from 'video.js';
 
 class VideoPlayer extends React.Component {
   componentDidMount() {
+    // add ByteArk Lighthouse middleware to videojs
+    videojs.use('*', window.ByteArkLighthouse.middleware)
+    
     // instantiate Video.js
     this.player = videojs(this.videoNode, this.props, function onPlayerReady() {
       console.log('onPlayerReady', this);
     });
-
-    // add ByteArk Lighthouse middleware to videojs
-    videojs.use('*', window.ByteArkLighthouse.middleware)
 
     // init Byteark Lighthouse
     window.ByteArkLighthouse.init(this.player, {
