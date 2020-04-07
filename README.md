@@ -3,7 +3,7 @@
 This project is an example usage for ByteArk Lighthouse Plugin for Video.js with React.js to collect video watching statistic and diagnostic network issues.
 
 ## Requirements
-* Video.js v7 with VHS plugin
+* Video.js v6 with VHS plugin
 
 ## Installation
 
