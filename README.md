@@ -31,7 +31,7 @@ const sources = [{
 | subtitle | string | no       | episode name or short description |
 | poster   | string | no       | poster url of video               |
 
-3. In your VideoPlayer component after create videojs instance add a ByteArk Lighthouse middleware to Video.js
+3. In your VideoPlayer component **before create videojs instance** add a ByteArk Lighthouse middleware to Video.js
 ```js
 videojs.use('*', window.ByteArkLighthouse.middleware)
 ```
