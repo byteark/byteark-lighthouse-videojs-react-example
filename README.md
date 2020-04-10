@@ -17,11 +17,11 @@ This project is an example usage for ByteArk Lighthouse Plugin for Video.js with
 videojs.use('*', window.ByteArkLighthouse.middleware)
 ```
 
-3. Creating the VideoJS player just like how you normally do it, except that you need to fill some video detail fields using one of these options below.
+3. Set video detail to video player by using options below. The required fields are `videoId` and `title`.
 
 **Option #1**
 
-Add video detail to the source object in options when create VideoJS player.
+Set video detail to sources object in VideoJS's options when create video player.
 
 ```js
 // 'player-id-here' is the ID of <video> or <div> element of the player.
@@ -40,7 +40,7 @@ const player = videojs('player-id-here', {
 
 **Option #2**
 
-Add video detail to HTML source tag
+Set video detail to `<source>` tag
 
 ```html
 <video id="player-id-here" class="video-js" controls playsinline>
@@ -57,10 +57,10 @@ Add video detail to HTML source tag
 
 **Option #3**
 
-Add video detail when call src function to change video source
+Set video detail when call `player.src()` function
 
 ```js
-// 'player is instance of VideoJS.
+// player is instance of VideoJS.
 
 player.src({
   src: 'https://inox-bhm9yr.cdn.byteark.com/video-objects/RI2PimuHxDXw/playlist.m3u8',
