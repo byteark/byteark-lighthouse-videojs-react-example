@@ -3,7 +3,7 @@
 This project is an example usage for ByteArk Lighthouse Plugin for Video.js with React.js to collect video watching statistic and diagnostic network issues.
 
 ## Requirements
-* Video.js v6 with VHS plugin
+* Video.js v6 or v7 with VHS plugin
 
 ## Installation
 
@@ -17,7 +17,12 @@ This project is an example usage for ByteArk Lighthouse Plugin for Video.js with
 videojs.use('*', window.ByteArkLighthouse.middleware)
 ```
 
-3. Creating the VideoJS player just like how you normally do it, except that you need to fill some video detail fields in the source object.
+3. Creating the VideoJS player just like how you normally do it, except that you need to fill some video detail fields using one of these options below.
+
+**Option #1**
+
+Add video detail to the source object in options when create VideoJS player.
+
 ```js
 // 'player-id-here' is the ID of <video> or <div> element of the player.
 
@@ -31,6 +36,40 @@ const player = videojs('player-id-here', {
     poster: 'https//qoder.byteark.com/images/video-frames/1/GU/cg/1GUcghrocmlz-large.jpg',
   }]
 }
+```
+
+**Option #2**
+
+Add video detail to HTML source tag
+
+```html
+<video id="player-id-here" class="video-js" controls playsinline>
+  <source
+    src="https://inox-bhm9yr.cdn.byteark.com/video-objects/RI2PimuHxDXw/playlist.m3u8"
+    type="application/x-mpegURL"
+    videoId="RI2PimuHxDXw"
+    title="BIG BUCK BUNNY"
+    subtitle="Big buck bunny sample video"
+    poster="https//qoder.byteark.com/images/video-frames/1/GU/cg/1GUcghrocmlz-large.jpg"
+  />
+</video>
+```
+
+**Option #3**
+
+Add video detail when call src function to change video source
+
+```js
+// 'player is instance of VideoJS.
+
+player.src({
+  src: 'https://inox-bhm9yr.cdn.byteark.com/video-objects/RI2PimuHxDXw/playlist.m3u8',
+  type: 'application/x-mpegURL',
+  videoId: 'RI2PimuHxDXw',
+  title: 'BIG BUCK BUNNY',
+  subtitle: 'Big buck bunny sample video',
+  poster: 'https//qoder.byteark.com/images/video-frames/1/GU/cg/1GUcghrocmlz-large.jpg',
+})
 ```
 
 #### Video detail fields
