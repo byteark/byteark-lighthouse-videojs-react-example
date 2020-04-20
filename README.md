@@ -34,6 +34,7 @@ const player = videojs('player-id-here', {
     title: 'BIG BUCK BUNNY',
     subtitle: 'Big buck bunny sample video',
     poster: 'https//qoder.byteark.com/images/video-frames/1/GU/cg/1GUcghrocmlz-large.jpg',
+    userId: 'user-id-here',
   }]
 }
 ```
@@ -51,6 +52,7 @@ Set video detail to `<source>` tag
     title="BIG BUCK BUNNY"
     subtitle="Big buck bunny sample video"
     poster="https//qoder.byteark.com/images/video-frames/1/GU/cg/1GUcghrocmlz-large.jpg"
+    userId="user-id-here"
   />
 </video>
 ```
@@ -69,6 +71,7 @@ player.src({
   title: 'BIG BUCK BUNNY',
   subtitle: 'Big buck bunny sample video',
   poster: 'https//qoder.byteark.com/images/video-frames/1/GU/cg/1GUcghrocmlz-large.jpg',
+  userId: 'user-id-here',
 })
 ```
 
@@ -79,6 +82,7 @@ player.src({
 | title    | string | yes      | title of video                    |
 | subtitle | string | no       | episode name or short description |
 | poster   | string | no       | poster url of video               |
+| userId   | string | no       | User id in your system            |
 
 4. Initialize ByteArk Lighthouse Plugin by call init function by pass videojs player instance and options
 ```js
