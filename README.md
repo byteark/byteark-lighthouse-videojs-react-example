@@ -86,6 +86,7 @@ player.src({
 
 window.ByteArkLighthouse.init(player, {
   projectId: 'lighthouse-project-id-here',
+  userId: 'user-id-here',
   debug: true,
 })
 ```
@@ -96,6 +97,7 @@ window.ByteArkLighthouse.init(player, {
 | name      | type    | require | description                    |
 |-----------|---------|---------|--------------------------------|
 | projectId | string  | yes     | ByteArk Lighthouse's projectId |
+| userId    | string  | no      | User id in your system         |
 | debug     | boolean | no      | enable/disable debug log       |
 
 ## Disable debug log
