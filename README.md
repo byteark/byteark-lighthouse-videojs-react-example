@@ -34,30 +34,16 @@ const player = videojs('player-id-here', {
     title: 'BIG BUCK BUNNY',
     subtitle: 'Big buck bunny sample video',
     poster: 'https//qoder.byteark.com/images/video-frames/1/GU/cg/1GUcghrocmlz-large.jpg',
-    userId: 'user-id-here',
+    lighthouse: {
+      user: {
+        userId: 'user-id-here',
+      },
+    },
   }]
 }
 ```
 
 **Option #2**
-
-Set video detail to `<source>` tag
-
-```html
-<video id="player-id-here" class="video-js" controls playsinline>
-  <source
-    src="https://inox-bhm9yr.cdn.byteark.com/video-objects/RI2PimuHxDXw/playlist.m3u8"
-    type="application/x-mpegURL"
-    videoId="RI2PimuHxDXw"
-    title="BIG BUCK BUNNY"
-    subtitle="Big buck bunny sample video"
-    poster="https//qoder.byteark.com/images/video-frames/1/GU/cg/1GUcghrocmlz-large.jpg"
-    userId="user-id-here"
-  />
-</video>
-```
-
-**Option #3**
 
 Set video detail when call `player.src()` function
 
@@ -71,18 +57,24 @@ player.src({
   title: 'BIG BUCK BUNNY',
   subtitle: 'Big buck bunny sample video',
   poster: 'https//qoder.byteark.com/images/video-frames/1/GU/cg/1GUcghrocmlz-large.jpg',
-  userId: 'user-id-here',
+  lighthouse: {
+    user: {
+      userId: 'user-id-here',
+    },
+  },
 })
 ```
 
 #### Video detail fields
-| name     | type   | required | description                       |
-|----------|--------|----------|-----------------------------------|
-| videoId  | string | yes      | videoId from ByteArk service      |
-| title    | string | yes      | title of video                    |
-| subtitle | string | no       | episode name or short description |
-| poster   | string | no       | poster url of video               |
-| userId   | string | no       | User id in your system            |
+| name                   | type   | required | description                       |
+|------------------------|--------|----------|-----------------------------------|
+| videoId                | string | yes      | videoId from ByteArk service      |
+| title                  | string | yes      | title of video                    |
+| subtitle               | string | no       | episode name or short description |
+| poster                 | string | no       | poster url of video               |
+| lighthouse             | object | no       | lighthouse object                 |
+| lighthouse.user        | object | no       | user object                       |
+| lighthouse.user.userId | string | no       | User id in your system            |
 
 4. Initialize ByteArk Lighthouse Plugin by call init function by pass videojs player instance and options
 ```js
@@ -90,7 +82,6 @@ player.src({
 
 window.ByteArkLighthouse.init(player, {
   projectId: 'lighthouse-project-id-here',
-  userId: 'user-id-here',
   debug: true,
 })
 ```
@@ -101,7 +92,6 @@ window.ByteArkLighthouse.init(player, {
 | name      | type    | require | description                    |
 |-----------|---------|---------|--------------------------------|
 | projectId | string  | yes     | ByteArk Lighthouse's projectId |
-| userId    | string  | no      | User id in your system         |
 | debug     | boolean | no      | enable/disable debug log       |
 
 ## Disable debug log
